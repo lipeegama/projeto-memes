@@ -18,4 +18,13 @@ async function carregarMemes() {
         });
 }
 
+async function apagarMeme(id) {
+    const url = `https://6733b38fa042ab85d117ba7a.mockapi.io/apiu/memes/${id}`
+    const resposta = await fetch(url, {
+        method: 'DELETE'
+    })
+    alert('Seu meme foi excluído com sucesso!')
+    await carregarMemes()
+}
+
 carregarMemes()
